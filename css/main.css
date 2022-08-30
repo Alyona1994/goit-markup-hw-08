@@ -41,9 +41,12 @@ ol {
 }
 
 img {
+  width: min-content;
+}
+
+img, svg {
   display: block;
-  min-width: 100%;
-  height: auto;
+  max-width: 100%;
 }
 
 .list {
@@ -137,7 +140,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 528px;
-  height: 581px;
   background: var(--top-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -171,7 +173,12 @@ body {
   fill: var(--accent-color);
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 449px) {
+  .modal {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 450px) and (max-width: 1199px) {
   .modal {
     width: 450px;
     height: 609px;
@@ -412,6 +419,7 @@ body {
   .mobail-menu-social {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
   }
   .mobile-menu-social__list {
     position: relative;
@@ -1018,6 +1026,8 @@ body {
   .footer-menu__adress {
     display: flex;
     justify-content: center;
+  }
+  .footer-contacts {
     margin-bottom: 60px;
   }
   .footer-menu__card {
@@ -1031,7 +1041,7 @@ body {
     display: flex;
     justify-content: center;
   }
-  .social-list {
+  .social {
     margin-bottom: 60px;
   }
   .footer-form {
@@ -1043,40 +1053,31 @@ body {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .footer-address {
+  .footer-address-social {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
-  .logo-text {
-    display: flex;
+  .footer-contacts {
+    margin-bottom: 60px;
+  }
+  .footer {
+    padding: 60px 0;
     margin-right: 0;
-    justify-content: center;
+    text-align: center;
   }
-  .footer-menu__adress {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
+  .footer-social {
+    min-width: 450px;
+    margin-right: auto;
+    margin-left: auto;
   }
-  .footer-menu__card {
-    display: flex;
-    justify-content: center;
-  }
-  .footer-menu__card:not(:last-child) {
-    margin-bottom: 8px;
-  }
-  .social-title {
-    display: flex;
-    justify-content: center;
-  }
-  .social-list {
-    margin-bottom: 60px;
+  .footer-form-input {
+    width: 100%;
+    margin-bottom: 20px;
   }
   .footer-form {
     flex-direction: column;
-    gap: 20px;
-  }
-  .footer-form-input {
-    width: 450px;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1131,6 +1132,14 @@ body {
     font-size: 28px;
     line-height: 33px;
     margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .clients__list-item {
+    width: calc((100% - 30px) / 2);
+  }
+  .clients__link {
+    width: auto;
   }
 }
 @media screen and (min-width: 768px) {

@@ -16,10 +16,14 @@ ol {
 }
 
 img {
-    display: block;
-    min-width: 100%;
-    height: auto;
+    width: min-content;
 }
+
+img, svg {
+        display: block;
+        max-width: 100%;
+    }
+
 
 .list {
     list-style: none;
